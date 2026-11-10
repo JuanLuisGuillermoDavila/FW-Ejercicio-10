@@ -1,0 +1,62 @@
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-9 col-lg-7">
+      <div class="card shadow-lg border-0 rounded-4 p-4 profile-card">
+        
+        <!-- Encabezado con Fotografía y Datos Básicos -->
+        <div class="text-center mb-4">
+          <img src="estudiante.jpg" alt="Fotografía del estudiante" class="rounded-circle img-thumbnail shadow-sm mb-3 profile-img">
+          <h2 class="fw-bold text-primary mb-1">{{ nombre }}</h2>
+          <p class="text-muted fs-6 mb-1">{{ carrera }}</p>
+          <span class="badge bg-secondary mb-2 px-3 py-2">{{ institucion }}</span>
+          <p class="small text-secondary mb-0">Semestre: {{ semestre }} | Edad: {{ edad }} años</p>
+        </div>
+
+        <!-- Sección: Acerca de mí -->
+        <div class="mb-4">
+          <h5 class="border-bottom pb-2 text-dark fw-semibold">👨‍💻 Acerca de mí</h5>
+          <p class="text-muted text-justify">{{ descripcion }}</p>
+        </div>
+
+        <!-- Sección: Habilidades Técnicas -->
+        <div class="mb-4">
+          <h5 class="border-bottom pb-2 text-dark fw-semibold">⚙️ Habilidades Técnicas</h5>
+          <div class="d-flex flex-wrap gap-2 mt-2">
+            @for (habilidad of habilidades; track $index) {
+              <span class="badge bg-primary px-3 py-2 shadow-sm">{{ habilidad }}</span>
+            }
+          </div>
+        </div>
+
+        <!-- Sección: Idiomas (Actividad Adicional 4) -->
+        <div class="mb-4">
+          <h5 class="border-bottom pb-2 text-dark fw-semibold">🌐 Idiomas</h5>
+          <div class="d-flex flex-wrap gap-2 mt-2">
+            @for (idioma of idiomas; track $index) {
+              <span class="badge bg-info text-dark px-3 py-2">{{ idioma }}</span>
+            }
+          </div>
+        </div>
+
+        <!-- Sección: Intereses (Actividad Adicional 5) -->
+        <div class="mb-4">
+          <h5 class="border-bottom pb-2 text-dark fw-semibold">🎯 Mis Intereses</h5>
+          <div class="d-flex flex-wrap gap-2 mt-2">
+            @for (interes of intereses; track $index) {
+              <span class="badge bg-success px-3 py-2 shadow-sm">{{ interes }}</span>
+            }
+          </div>
+        </div>
+
+        <!-- Sección: Contacto y Enlaces (Actividad Adicional 6) -->
+        <div class="text-center mt-3 pt-3 border-top">
+          <p class="mb-2 text-muted"><strong>Correo institucional:</strong> {{ correo }}</p>
+          <a [href]="githubUrl" target="_blank" class="btn btn-dark btn-sm px-4 py-2 rounded-pill shadow-sm">
+            🔗 Ver Perfil de GitHub / LinkedIn
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+/* Actividad Adicional 1: Paleta de colores y diseño personalizado */
+body {
+  background-color: #f4f6f9;
+}
+
+.profile-card {
+  background: #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.profile-img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border: 4px solid #0d6efd;
+}
+
+/* Actividad Adicional 7: Ajustes responsivos mediante media queries */
+@media (max-width: 576px) {
+  .profile-card {
+    padding: 1.2rem !important;
+  }
+  .profile-img {
+    width: 110px;
+    height: 110px;
+  }
+}
